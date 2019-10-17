@@ -43,13 +43,19 @@ var datametro = fetch(url, opts)
             console.log(formattedTime);
             var nyt = new Date();
             console.log(nyt);
-            // vertaa aikoja tässä välissä
-            
+            // vertaa aikoja tässä välissä            
             var minutes = diff_minutes(date, nyt);
             console.log( minutes + " min");
-
             // vertaus loppuu
 
+            //aja tavarat HTML:ään
+            document.getElementById("metrolista").innerHTML +=
+            "<tr>"
+                + "<td>" + next[i].headsign + "</td>"
+                + "<td>" + "Saapuu: " + formattedTime + "</td>"
+                + "<td>" + + minutes + " min" + "</td>"
+                + "</tr>";
+            //lopeta ajaminen
 
         }
     })
