@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery-3.4.1.js"></script>
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <script src="JavaScript.js"></script>
+    <script>
+        var locationdata;
+        function locate() {
+        navigator.geolocation.getCurrentPosition((data) => {
+            console.dir(data)
+            document.getElementById("located").innerHTML = "Your position is:<br>" + data.coords.latitude + ", " + data.coords.longitude;
+            locationdata ="Your position is:<br>" + data.coords.latitude + ", " + data.coords.longitude;
+        }, (err) => {
+            console.dir(err)
+        }, { enableHighAccuracy: true });
+        };
+
+        function save() {
+            // Store data
+        //var someData = 'The data that I want to store for later.';
+        localStorage.setItem('myDataKey', locationdata);
+        }
+
+        function load() {
+            
+        // Get data
+        var saveddata = localStorage.getItem('myDataKey');
+            document.getElementById("oldloc").innerHTML = saveddata;    
+
+        }
+    </script>
+</head>
+<body>
+    <div id="content">
+
+        <div class="header">
+            <h2>Header</h2>
+        </div>
+
+        <div class="row">
+            <div class="column" id="metrolista"></div>
+            <div class="column"><button style="color: white; background-color: #292828; font-family: Lato, Calibri" id="nappi" onclick="testi();">what</button></div>
+            <div class="column"></div>
+        </div>
+        <div class="row">
+            <div class="column" id="metro">Column</div>
+            <div class="column">Column</div>
+            <div class="column">Column</div>
+        </div>
+
+        <div class="footer">
+            <p>Footer</p>
+        </div>
+    </div>
+</body>
+</html>

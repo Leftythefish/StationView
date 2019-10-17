@@ -1,0 +1,94 @@
+﻿body {
+    color: white;
+    background-color: #292828;
+    font-family: Lato, Calibri;
+}
+
+input {
+    width: 100%;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    background-color: #313030;
+    color: #7cd4fe;
+    border: 2px solid #808080;
+    border-radius: 4px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    background-color: #313030;
+    color: #7cd4fe;
+    border: 2px solid #808080;
+    border-radius: 4px;
+}
+
+select {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    background-color: #313030;
+    color: #7cd4fe;
+    border: 2px solid #808080;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    top: 0;
+    padding: 5px;
+}
+
+p {
+    margin-left: 2px;
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+
+h1 {
+    margin-left: 5px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#content {
+  margin-left: 40px;
+
+}
+
+.header {
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.column {
+    border: 2px solid #808080;
+    border-radius: 6px;
+    margin: 4px;
+    float: left;
+    min-width: 30%;
+    padding: 10px;    
+
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer {
+    padding: 10px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
