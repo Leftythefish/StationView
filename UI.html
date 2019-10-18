@@ -5,48 +5,37 @@
     <title></title>
     <script src="jquery-3.4.1.js"></script>
     <link href="StyleSheet.css" rel="stylesheet" />
-    <script src="JavaScript.js"></script>
-    <script>
-        var locationdata;
-        function locate() {
-        navigator.geolocation.getCurrentPosition((data) => {
-            console.dir(data)
-            document.getElementById("located").innerHTML = "Your position is:<br>" + data.coords.latitude + ", " + data.coords.longitude;
-            locationdata ="Your position is:<br>" + data.coords.latitude + ", " + data.coords.longitude;
-        }, (err) => {
-            console.dir(err)
-        }, { enableHighAccuracy: true });
-        };
-
-        function save() {
-            // Store data
-        //var someData = 'The data that I want to store for later.';
-        localStorage.setItem('myDataKey', locationdata);
-        }
-
-        function load() {
-            
-        // Get data
-        var saveddata = localStorage.getItem('myDataKey');
-            document.getElementById("oldloc").innerHTML = saveddata;    
-
-        }
-    </script>
+    <!--<script src="JavaScript.js"></script>-->
+    <script src="JavaScript_bussit.js"></script>
 </head>
 <body>
     <div id="content">
 
         <div class="header">
-            <h2>Header</h2>
+            <h2><button style="color: white; background-color: #292828; font-family: Lato, Calibri; height: 60px; padding: 3px; border: solid #808080; border-radius: 2px;" id="päivitä" onclick="metrot();">UPDATE</button></h2>
         </div>
 
         <div class="row">
-            <div class="column" >
-                <table id="metrolista">
-    
+            <div class="column">
+                <table border="0">
+                    <tr>
+                        <td class="otsikko" colspan="2">Seuraava Metro</td>
+                    </tr>
+
                 </table>
+                <table id="metrolista" border="0" class="ajat"></table>
             </div>
-            <div class="column"><button style="color: white; background-color: #292828; font-family: Lato, Calibri" id="nappi" onclick="testi();">what</button></div>
+            <div class="column">
+                <table border="0">
+                    <tr>
+                        <td class="otsikko" colspan="2" style="color: #284ebc">BUSSIT</td>
+                    </tr>
+
+                </table>
+                <table id="bussilista" border="0" class="ajat"></table>
+            </div>
+
+            </div>
             <div class="column"></div>
         </div>
         <div class="row">
@@ -58,6 +47,7 @@
         <div class="footer">
             <p>Footer</p>
         </div>
-    </div>
+   
+
 </body>
 </html>

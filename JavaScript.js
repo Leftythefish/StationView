@@ -1,4 +1,5 @@
 ﻿var obj;
+
 const query = `
   query {
     stop(id: "HSL:2314601") {
@@ -25,7 +26,13 @@ const opts = {
     body: JSON.stringify({ query })
 };
 
-var datametro = fetch(url, opts)
+var a = setInterval(metrot, 120000);
+
+
+function metrot() { 
+    document.getElementById("metrolista").innerHTML = "";
+
+    fetch(url, opts)
     .then(res => res.json(res))
     .then(json => {
         console.dir(json.data)
@@ -38,8 +45,7 @@ var datametro = fetch(url, opts)
             var date = new Date(unixtime * 1000);
             var hours = date.getHours();
             var minutes = "0" + date.getMinutes();
-            var seconds = "0" + date.getSeconds();
-            var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+            var formattedTime = hours + ':' + minutes.substr(-2);
             console.log(formattedTime);
             var nyt = new Date();
             console.log(nyt);
@@ -51,22 +57,22 @@ var datametro = fetch(url, opts)
             //aja tavarat HTML:ään
             document.getElementById("metrolista").innerHTML +=
             "<tr>"
-                + "<td>" + next[i].headsign + "</td>"
-                + "<td>" + "Saapuu: " + formattedTime + "</td>"
-                + "<td>" + + minutes + " min" + "</td>"
+                + "<td>" + formattedTime + "</td>"
+                + "<td>" + minutes + " min" + "</td>"
                 + "</tr>";
             //lopeta ajaminen
 
         }
     })
-    .catch(err=>console.dir(err));
+        .catch(err => console.dir(err));
+}
+
 
 function diff_minutes(dt2, dt1) {
 
     var diff = (dt2.getTime() - dt1.getTime()) / 1000;
     diff /= 60;
     return Math.abs(Math.round(diff));
-
 }
 
 
