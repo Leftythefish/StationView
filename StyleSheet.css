@@ -1,6 +1,11 @@
 ﻿body {
     color: white;
-    background-color: #292828;
+    background-image: url("bg.jpg");
+    height: 1000px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-color: #313030;
     font-family: Lato, Calibri;
 }
 
@@ -29,17 +34,23 @@ button {
     width: 100%;
     padding: 12px 20px;
     box-sizing: border-box;
-    background-color: #313030;
+    background-color: rgba(0,0,0, 0.1);
     color: #7cd4fe;
-    border: 2px solid #808080;
+    border-color: rgba(0,0,0, 0.1);
     border-radius: 4px;
+}
+
+div {
+    padding: 5px, 10px, 10px, 10px;
+
 }
 
 table {
     width: 100%;
     top: 0;
-    padding: 5px;
+    margin: 5px, 10px, 10px, 10px;
     text-align: center;
+    /*background-color: #292828;*/
 }
 
 .otsikko {
@@ -52,9 +63,17 @@ table {
 }
 .ajat {
     font-size: 20px;
+    padding: 2px 5px 15px 5px;
+}
+.bussit {
+    font-size: 15px;
+    padding: 2px 2px 2px 2px;
+}
+tr {
+padding: 3px;
 }
 td {
-    padding: 15px 5px 15px 5px;
+    
 }
 p {
     margin-left: 2px;
@@ -71,8 +90,14 @@ h1 {
 }
 
 #content {
-  margin-left: 40px;
-
+    /*margin-left: auto;
+    margin-right: auto;
+    text-align: center;*/
+    display: flex; /* establish flex container */
+    flex-direction: column; /* stack flex items vertically */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center; /* center items horizontally, in this case */
+    height: 600px;
 }
 
 .header {
@@ -82,13 +107,16 @@ h1 {
 }
 
 .column {
-    border: 2px solid #808080;
+    background-color: rgba(32, 32, 32, 0.7);
+    padding: 5px, 10px, 10px, 10px;
+    border: 2px solid rgba(32, 32, 32, 0.4);
     border-radius: 6px;
-    margin: 4px;
     float: left;
-    min-width: 20%;
-    padding: 10px;    
-
+    margin: 5px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
+    width: 300px;
+    height: 400px;
+    text-align: center;
 }
 
 .row:after {
