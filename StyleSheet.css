@@ -65,6 +65,11 @@ table {
     font-size: 20px;
     padding: 2px 5px 15px 5px;
 }
+.majat {
+    font-size: 20px;
+    padding: 2px 5px 15px 5px;
+}
+
 .bussit {
     font-size: 15px;
     padding: 2px 2px 2px 2px;
@@ -114,8 +119,8 @@ h1 {
     float: left;
     margin: 5px;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
-    width: 300px;
-    height: 400px;
+    width: 320px;
+    height: 350px;
     text-align: center;
 }
 
