@@ -44,7 +44,7 @@ const opts = {
 };
 
 
-var a = setInterval(metrot, 120000);
+//var a = setInterval(metrot, 120000);
 
 
 function metrot() { 
